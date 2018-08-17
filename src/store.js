@@ -17,6 +17,10 @@ export default new Vuex.Store({
     async loadImages({ commit }, query) {
       const images = await getImages(query)
       commit('setImages', images)
+    },
+    async loadMoreImages({ commit }, query) {
+      const images = await getImages(query)
+      commit('setImages', images)
     }
   }
 })

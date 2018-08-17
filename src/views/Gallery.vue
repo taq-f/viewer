@@ -13,7 +13,12 @@
           @click="showImage"></gallery-image>
       </div>
     </div>
-    <!-- <modal :image="image" :format="format"></modal> -->
+    <div class="load-more" @click="loadMoreImages">
+      <span class="icon">
+        <i class="fas fa-arrow-down"></i>
+      </span>
+      Load more...
+    </div>
   </div>
 </template>
 
@@ -38,6 +43,9 @@ export default {
     ...mapActions(["loadImages"]),
     showImage(image, format) {
       new Modal().open(image, format);
+    },
+    loadMoreImages() {
+      this.$store.dispatch("loadMoreImages");
     }
   },
   mounted() {
@@ -86,7 +94,11 @@ export default {
   margin-left: 10px;
   margin-top: 20px;
 }
+
+.load-more {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 </style>
-
-
-
