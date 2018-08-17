@@ -64,12 +64,27 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 90%;
+}
+
+@media screen and (min-width: 480px) {
+  .gallery {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .gallery {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gallery {
+    width: 70%;
+  }
 }
 
 .image-container {
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 </style>
 
